@@ -1,9 +1,8 @@
 from sprite_object import *
 
 class Weapon(AnimatedSprite):
-    def __init__(self, game, path='resources/textures/sprites/weapon/shotgun/0.png', 
-                 pos=(0, 0), scale = 0.8, shift=0.15, animation_time=120):
-        super().__init__(game, path, pos, scale, shift, animation_time)
+    def __init__(self, game, path='resources/textures/sprites/weapon/shotgun/0.png',scale = 0.4, animation_time=90):
+        super().__init__(game=game, path=path, scale=scale, animation_time=animation_time)
         self.images = deque(
             [pg.transform.smoothscale(img, (self.image.get_width() * scale, self.image.get_height() * scale)) 
              for img in self.images])
